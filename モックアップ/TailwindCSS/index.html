@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作業一覧</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <nav class="navbar bg-primary text-primary-content shadow-sm">
+        <div class="flex-1">
+            <a class="font-bold text-2xl px-2">TODOリスト</a>
+            <ul class="menu menu-horizontal px-1">
+                <li>
+                    <a href="index.html" class="menu-active">作業一覧</a>
+                </li>
+                <li>
+                    <a href="create.html">作業登録</a>
+                </li>
+            </ul>
+        </div>
+        <div class="flex-none">
+            <ul class="menu menu-horizontal px-1">
+                <li>
+                    <details>
+                        <summary>テスト花子 さん</summary>
+                        <ul class="bg-base-100 text-black rounded-t-none p-2">
+                            <li>
+                                <form action="login.html">
+                                    <button>ログアウト</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </details>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main class="max-w-6xl mx-auto pt-10 px-5">
+        <div class="justify-self-end">
+            <form action="index.html" method="get">
+                <input type="text" class="input" placeholder="検索" name="search">
+            </form>
+        </div>
+        <div class="overflow-x-auto">
+            <table class="table table-zebra">
+                <thead>
+                    <tr>
+                        <th class="w-1/4">項目名</th>
+                        <th>担当者</th>
+                        <th>登録日</th>
+                        <th>期限日</th>
+                        <th>完了日</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr class="bg-red-200">
+                        <td>テストの項目</td>
+                        <td>テスト花子 </td>
+                        <td>2026-01-13 </td>
+                        <td>2026-02-12 </td>
+                        <td>未 </td>
+                        <td class="flex gap-1">
+                            <form action="index.html">
+                                <button class="btn btn-primary w-20">完了</button>
+                            </form>
+                            <a href="edit.html" class="btn btn-primary">修正</a>
+                            <a href="delete_confirm.html" class="btn btn-warning">削除</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="line-through">テストの項目２ </td>
+                        <td class="line-through">テスト太郎 </td>
+                        <td class="line-through">2026-02-13 </td>
+                        <td class="line-through">2026-02-19 </td>
+                        <td class="line-through">2026-02-13 </td>
+                        <td class="flex gap-1">
+                            <form action="index.html">
+                                <button class="btn btn-secondary w-20">未完了</button>
+                            </form>
+                            <a href="edit.html" class="btn btn-primary">修正</a>
+                            <a href="delete_confirm.html" class="btn btn-warning">削除</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>テストの項目３ </td>
+                        <td>テスト花子 </td>
+                        <td>2026-02-13 </td>
+                        <td>2026-02-24 </td>
+                        <td>未 </td>
+                        <td class="flex gap-1">
+                            <form action="index.html">
+                                <button class="btn btn-primary w-20">完了</button>
+                            </form>
+                            <a href="edit.html" class="btn btn-primary">修正</a>
+                            <a href="delete_confirm.html" class="btn btn-warning">削除</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>テストの項目４ </td>
+                        <td>テスト太郎 </td>
+                        <td>2026-02-13 </td>
+                        <td>2026-03-03 </td>
+                        <td>未 </td>
+                        <td class="flex gap-1">
+                            <form action="index.html">
+                                <button class="btn btn-primary w-20">完了</button>
+                            </form>
+                            <a href="edit.html" class="btn btn-primary">修正</a>
+                            <a href="delete_confirm.html" class="btn btn-warning">削除</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>テストの項目５ </td>
+                        <td>テスト太郎 </td>
+                        <td>2026-02-13 </td>
+                        <td>2026-04-01 </td>
+                        <td>未 </td>
+                        <td class="flex gap-1">
+                            <form action="index.html">
+                                <button class="btn btn-primary w-20">完了</button>
+                            </form>
+                            <a href="edit.html" class="btn btn-primary">修正</a>
+                            <a href="delete_confirm.html" class="btn btn-warning">削除</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>   
+</body>
+</html>

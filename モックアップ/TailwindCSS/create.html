@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作業登録</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <nav class="navbar bg-primary text-primary-content shadow-sm">
+        <div class="flex-1">
+            <a class="font-bold text-2xl px-2">TODOリスト</a>
+            <ul class="menu menu-horizontal px-1">
+                <li>
+                    <a href="index.html">作業一覧</a>
+                </li>
+                <li>
+                    <a href="create.html" class="menu-active">作業登録</a>
+                </li>
+            </ul>
+        </div>
+        <div class="flex-none">
+            <ul class="menu menu-horizontal px-1">
+                <li>
+                    <details>
+                        <summary>テスト花子 さん</summary>
+                        <ul class="bg-base-100 text-black rounded-t-none p-2">
+                            <li>
+                                <form action="login.html">
+                                    <button>ログアウト</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </details>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main class="max-w-6xl mx-auto pt-10 px-5">
+        <div class="max-w-lg card bg-base-100 card-lg shadow-sm mx-auto">
+            <div class="card-body items-center">
+                <h2 class="card-title">作業登録</h2>
+                
+                <form action="index.html" class="w-full flex flex-col gap-4">
+                    <div>
+                        <label for="item_name" class="label">項目名</label>
+                        <input type="text" name="item_name" class="input w-full">
+                        <p class="text-xs text-error">項目名を入力してください</p>
+                    </div>
+                    <div>
+                        <label for="user_id" class="label">担当者</label>
+                        <select name="user_id" class="select w-full">
+                            <option disabled selected>選択してください</option>
+                            <option value="1">テスト花子</option>
+                            <option value="2">テスト太郎</option>
+                            <option value="3">未来かたち</option>
+                        </select>
+                        <p class="text-xs text-error">担当者を選択してください</p>
+                    </div>
+                    <div>
+                        <label for="expire_date" class="label">期限</label>
+                        <input type="date" name="expire_date" class="input w-full">
+                    </div>
+                    <div>
+                        <label class="label">
+                            <input type="checkbox" class="checkbox">
+                            完了
+                        </label>
+                    </div>
+                    <div class="text-center">
+                        <button class="btn btn-primary">登録</button>
+                        <a href="index.html" class="btn btn-primary btn-outline">キャンセル</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>   
+</body>
+</html>
