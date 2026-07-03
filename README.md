@@ -42,7 +42,7 @@
 
 下記の仕様に従って、共有型Todo管理アプリケーションを作成してください。
 
-HTMLのモックアップが用意してあるので、画面はそれを元に作成してください。モックアップにはBootstrap版とTailwindCSS版があるので、LaravelではTailwindCSS版を、それ以外の言語ではBootstrap版を使用してください。
+HTMLの[モックアップ](https://github.com/shibamirai/shared_todo_lists/tree/main/%E3%83%A2%E3%83%83%E3%82%AF%E3%82%A2%E3%83%83%E3%83%97)が用意してあるので、画面はそれを元に作成してください。モックアップにはBootstrap版とTailwindCSS版があるので、LaravelではTailwindCSS版を、それ以外の言語ではBootstrap版を使用してください。
 
 また、言語別に以下の制約事項に従ってください。
 
