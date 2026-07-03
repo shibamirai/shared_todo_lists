@@ -280,7 +280,7 @@ stateDiagram-v2
 |---|---|---|---|---|
 |id|int AUTO_INCREMENT|Yes| |PRIMARY_KEY|
 |user|varchar(50)|Yes| |ログインユーザー名<br>ユニークに設定する|
-|pass|varchar(255)|Yes| |パスワード<br>ハッシュ化した値をセットする|
+|pass|varchar(255)|Yes| |パスワード<br>ハッシュ化した値をセットする※サーブレットではそのままの値で構いません|
 |family_name|varchar(50)|Yes| |ユーザー姓|
 |first_name|varchar(50)|Yes| |ユーザー名|
 |is_admin|tinyint(1)|Yes|0|管理者権限<br>0:なし, 1:あり|
