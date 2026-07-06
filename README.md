@@ -304,6 +304,7 @@ stateDiagram-v2
 ## テーブル定義（Laravel）
 
 マイグレーションによってテーブルを作成してください  
+論理削除は[ソフトデリート](https://readouble.com/laravel/13.x/ja/eloquent.html#soft-deleting)で行ってください
 
 ### モデル一覧
 
@@ -323,7 +324,7 @@ stateDiagram-v2
 |email|string|unique| |メールアドレス<br>ログインユーザー名として使用|
 |password|string| | |パスワード|
 |is_admin|boolean| |false|管理者権限|
-|is_deleted|boolean| |false|削除フラグ|
+|deleted_at|softDeletes| | |削除日時($table->softDeletes()で作成|
 
 ### todo_items テーブル
 
@@ -335,6 +336,6 @@ stateDiagram-v2
 |registration_date|date| | |登録日|
 |expire_date|date| | |期限日|
 |finished_date|date|nullable| |完了日<br>NULLのとき未完了とする|
-|is_deleted|boolean| |false|削除フラグ|
+|deleted_at|softDeletes| | |削除日時($table->softDeletes()で作成|
 |created_at|timestamps| | |レコード登録日時($table->timestamps()で作成)|
 |updated_at|timestamps| | |レコード更新日時($table->timestamps()で作成)|
