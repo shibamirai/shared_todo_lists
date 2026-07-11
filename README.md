@@ -60,11 +60,7 @@ HTMLの[モックアップ](https://github.com/shibamirai/shared_todo_lists/tree
     [このサイト](https://daisyui.com/docs/install/laravel/)に従ってプロジェクトにdaisyUIをインストールして使用してください
 
 - Django
-    - ユーザーはデフォルトのまま使用せず、拡張ユーザーモデルを利用してください
-      その際、ログインユーザー名にはメールアドレスを使用するようにしてください
-    ※「現場で使えるDjangoの教科書」1.4, 1.5を参照
-    - モックアップではBootstrapをCDNで利用していますが、CDNではなく、「現場で使えるDjangoの教科書」第2章を参考にプロジェクトをBootstrapに対応させてください
-    ただしBootstrap5の場合はdjango-bootstrap4ではなくdjango-bootstrap5となるのでインストール時の設定の違いなどを調べて導入してください
+    - [Django学習者向け補足](https://github.com/shibamirai/shared_todo_lists/tree/main/Django学習者向け補足.md)を参照してください
 
 ## システムの目的
 
@@ -338,6 +334,40 @@ stateDiagram-v2
 |registration_date|date| | |登録日|
 |expire_date|date| | |期限日|
 |finished_date|date|nullable| |完了日<br>NULLのとき未完了とする|
-|deleted_at|softDeletes| | |削除日時($table->softDeletes()で作成|
+|deleted_at|softDeletes| | |削除日時($table->softDeletes()で作成)|
 |created_at|timestamps| | |レコード登録日時($table->timestamps()で作成)|
 |updated_at|timestamps| | |レコード更新日時($table->timestamps()で作成)|
+
+## テーブル定義（Django）
+
+モデルを定義し、マイグレーションを行ってください。ユーザーモデルはデフォルトのUserモデルを拡張して用意してください。
+
+### モデル一覧
+
+|#|モデル名|備考|
+|---|---|---|
+|1|CustomUser|ユーザー|
+|2|TodoItem|作業項目|
+
+### CustomUser
+
+デフォルトのUserクラスを下記のように拡張してCustomUserモデルを作成してください。AbstractUserとAbstractBaseUserのどちらを利用しても構いません。
+
+- username をなくし、email をログインユーザー名とする
+- 姓は last_name, 名は first_name とする
+- 論理削除 は is_active = false とする
+- 管理者権限は is_staff = true とする
+
+### TodoItem
+
+|フィールド名|型|引数|
+|---|---|---|
+|user|ForeignKey|CustomUser, on_delete=models.CASCADE|
+|item_name|CharField|max_length=100|
+|registration_date|DateField|auto_now_add=True
+|expire_date|DateField||
+|finished_date|DateField|null=True, blank=True|
+|is_deleted|BooleanField|default=False|
+|create_date_time|DateTimeField|auto_now_add=True|
+|update_date_time|DateTimeField|auto_now=True|
+
