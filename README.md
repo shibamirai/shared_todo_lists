@@ -49,6 +49,7 @@ HTMLの[モックアップ](https://github.com/shibamirai/shared_todo_lists/tree
 - Spring Boot
     - JPAではなくMyBatisを使用してください
     - モックアップではBootstrapをCDNで利用していますが、CDNではなくプロジェクトに直接Bootstrapを導入してください
+    - Bootstrapのドロップダウンを使うにはPopper.jsが必要なので、scriptタグでは bootstrap.min.js の代わりに bootstrap.bundle.min.js を読み込んでください
 
 - Laravel
     - AIに頼らないよう、Laravel Boostはインストールしないでください
